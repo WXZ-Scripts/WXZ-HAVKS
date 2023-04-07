@@ -1,0 +1,424 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("WXZ Scripts", "Ocean")
+
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("All hacks")
+
+
+MainSection:NewToggle("Jump And Speed", "Makes You Faster And Jump High", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 150
+ 
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 150
+    else
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+ 
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
+
+MainSection:NewButton("Infinitey Yield", "Admin Commands", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+MainSection:NewSlider("WALKSPEED", "SPEED!", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainSection:NewSlider("JUMP", "HIGH JUMP!", 350, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+MainSection:NewButton("RESET Speed&Jump", "Rests WS/HJ", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+
+-- Gravity
+local Gravity = Window:NewTab("Gravity")
+local GravitySection = Gravity:NewSection("Gravity Hacks")
+
+
+GravitySection:NewButton("0 Gravity", "you have 0 gravity", function()
+    game.workspace.Gravity = 0
+end)
+
+GravitySection:NewButton("10 Gravity", "you have 10 gravity", function()
+    game.workspace.Gravity = 10
+end)
+
+GravitySection:NewButton("75 Gravity", "you have 75 gravity", function()
+    game.workspace.Gravity = 75
+end)
+
+GravitySection:NewButton("100 Gravity", "you have 100 gravity", function()
+    game.workspace.Gravity = 100
+end)
+
+
+-- Guis
+local Guis = Window:NewTab("Guis")
+local GuisSection = Guis:NewSection("Guis")
+
+
+GuisSection:NewButton("Kat Gui", "You need to join their discord for key", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/zReal-King/King-Hub-v2/main/Loader.lua'))()
+end)
+ 
+GuisSection:NewButton("Slap Battles Gui", "Gives You 4 Guis With Scripts", function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()
+end)
+
+GuisSection:NewButton("Rayx Dahood Gui", "has a lot of good scripts inside of it", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/SpaceYes/Lua/Main/DaHood.Lua'))()
+end)
+
+GuisSection:NewButton("R20 Slap Royal Gui", "Best Slap Royal Gui I Found", function()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/cheesynob39/SB-SR/main/Slap_Royale.lua")))()
+end)
+
+GuisSection:NewButton("Slap Battles Kick Gui", "Sends People To Brazil", function()
+    local maxreacttime = 0.3
+    local cankill = true
+    
+    local Gui = Instance.new("ScreenGui")
+    local top = Instance.new("Frame")
+    local main = Instance.new("Frame")
+    local killdisplay = Instance.new("TextButton")
+    local plrname = Instance.new("TextBox")
+    local killplr = Instance.new("TextButton")
+    local mousekill = Instance.new("TextButton")
+    local close = Instance.new("TextButton")
+    local label = Instance.new("TextLabel")
+    
+    Gui.Name = "Gui"
+    Gui.Parent = game:GetService("CoreGui")
+    Gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Gui.ResetOnSpawn = false
+    
+    top.Name = "top"
+    top.Parent = Gui
+    top.BackgroundColor3 = Color3.fromRGB(223, 134, 57)
+    top.BorderSizePixel = 0
+    top.Position = UDim2.new(0.0241837967, 0, 0.0972568542, 0)
+    top.Size = UDim2.new(0, 231, 0, 50)
+    top.ZIndex = 999999999
+    
+    main.Name = "main"
+    main.Parent = top
+    main.BackgroundColor3 = Color3.fromRGB(255, 153, 51)
+    main.BorderSizePixel = 0
+    main.Position = UDim2.new(0, 0, 0.994339585, 0)
+    main.Size = UDim2.new(0, 231, 0, 245)
+    
+    killdisplay.Name = "killdisplay"
+    killdisplay.Parent = main
+    killdisplay.BackgroundColor3 = Color3.fromRGB(190, 123, 68)
+    killdisplay.BorderSizePixel = 0
+    killdisplay.Position = UDim2.new(-0.000114671886, 0, 0.255362451, 0)
+    killdisplay.Size = UDim2.new(0, 231, 0, 50)
+    killdisplay.Font = Enum.Font.SourceSans
+    killdisplay.Text = "Kick (Display Name)"
+    killdisplay.TextColor3 = Color3.fromRGB(0, 0, 0)
+    killdisplay.TextSize = 27.000
+    
+    plrname.Name = "plrname"
+    plrname.Parent = main
+    plrname.BackgroundColor3 = Color3.fromRGB(220, 207, 174)
+    plrname.BorderSizePixel = 0
+    plrname.Size = UDim2.new(0, 230, 0, 50)
+    plrname.ClearTextOnFocus = true
+    plrname.Font = Enum.Font.SourceSans
+    plrname.PlaceholderText = "Username"
+    plrname.Text = ""
+    plrname.TextColor3 = Color3.fromRGB(0, 0, 0)
+    plrname.TextSize = 27.000
+    
+    killplr.Name = "killplr"
+    killplr.Parent = main
+    killplr.BackgroundColor3 = Color3.fromRGB(190, 123, 68)
+    killplr.BorderSizePixel = 0
+    killplr.Position = UDim2.new(0, 0, 0.501333296, 0)
+    killplr.Size = UDim2.new(0, 231, 0, 50)
+    killplr.Font = Enum.Font.SourceSans
+    killplr.Text = "Kick (Player  Name)"
+    killplr.TextColor3 = Color3.fromRGB(0, 0, 0)
+    killplr.TextSize = 27.000
+    
+    mousekill.Name = "mousekill"
+    mousekill.Parent = main
+    mousekill.BackgroundColor3 = Color3.fromRGB(240, 92, 63)
+    mousekill.BorderSizePixel = 0
+    mousekill.Position = UDim2.new(-0.000114671886, 0, 0.748267829, 0)
+    mousekill.Size = UDim2.new(0, 231, 0, 50)
+    mousekill.Font = Enum.Font.SourceSans
+    mousekill.Text = "Click 2 Kick"
+    mousekill.TextColor3 = Color3.fromRGB(0, 0, 0)
+    mousekill.TextSize = 27.000
+    
+    close.Name = "close"
+    close.Parent = top
+    close.BackgroundColor3 = Color3.fromRGB(255, 69, 23)
+    close.BorderSizePixel = 0
+    close.Position = UDim2.new(0.784482777, 0, 0, 0)
+    close.Size = UDim2.new(0, 50, 0, 49)
+    close.Font = Enum.Font.SourceSans
+    close.Text = "X"
+    close.TextColor3 = Color3.fromRGB(0, 0, 0)
+    close.TextSize = 42.000
+    close.TextWrapped = true
+    
+    label.Name = "label"
+    label.Parent = top
+    label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    label.BackgroundTransparency = 1.000
+    label.BorderSizePixel = 0
+    label.Position = UDim2.new(-0.00431034481, 0, 0, 0)
+    label.Size = UDim2.new(0, 146, 0, 50)
+    label.Font = Enum.Font.SourceSans
+    label.Text = "Kick GUI"
+    label.TextColor3 = Color3.fromRGB(79, 54, 10)
+    label.TextSize = 44.000
+    label.TextStrokeColor3 = Color3.fromRGB(152, 122, 73)
+    label.TextWrapped = true
+    
+    local plr = game.Players.LocalPlayer
+    local clickkillenabled = false
+    
+    local plrtokill = nil
+    
+    local function notification(text,dur)
+        local CoreGui = game:GetService("StarterGui")
+    
+        CoreGui:SetCore("SendNotification", {
+            Title = "Kick GUI";
+            Text = text;
+            Duration = 3 or dur;
+        })
+    end
+    
+    function kill(target, delaytokill, delaytotpback)
+        if cankill == false then return end
+    
+        if target and target.Character and plr.Character and plr.Character:FindFirstChild("Torso") then
+            if target.Character then
+                if target.Character:FindFirstChildOfClass("Humanoid") and target.Character:FindFirstChild("HumanoidRootPart") then
+                    if plr.Character and plr.Character.PrimaryPart and target.Character:FindFirstChildOfClass("Humanoid").Health > 0 then
+                        local hum = target.Character:FindFirstChildOfClass("Humanoid")
+    
+                        if plr:FindFirstChild("Backpack") and (target.Character:FindFirstChild("Right Arm") or target.Character:FindFirstChild("RightHand")) then
+                            if plr.Character:FindFirstChildOfClass("Tool") or plr.Backpack:FindFirstChildOfClass("Tool") then
+                                local chr = plr.Character
+                                chr.Archivable = true
+    
+                                local prevcframe = chr.PrimaryPart.CFrame
+                                local prevcamcframe = workspace.CurrentCamera.CFrame
+    
+                                chr:FindFirstChild("Animate").Disabled = true
+                                
+                                local tool = nil
+                                local handle = nil
+                                if plr.Character:FindFirstChildOfClass("Tool") then
+                                    tool = plr.Character:FindFirstChildOfClass("Tool")
+                                    handle = tool:FindFirstChild("Handle")
+                                elseif plr.Backpack:FindFirstChildOfClass("Tool") then
+                                    tool = plr.Backpack:FindFirstChildOfClass("Tool")
+                                    handle = tool:FindFirstChild("Handle")
+                                end
+                                
+                                if plr.Character and target.Character and plr.Character.PrimaryPart and tool and handle then
+                                    cankill = false
+                                    
+                                    tool.Parent = plr.Backpack
+                                    
+                                    if plr.Character:FindFirstChildOfClass("Humanoid") then
+                                        plr.Character:FindFirstChildOfClass("Humanoid"):Destroy()
+                                    end
+                                    
+                                    local hum = Instance.new("Humanoid", plr.Character)
+                                    
+                                    wait(0.2)
+                                    
+                                    tool.Parent = plr.Character
+    
+                                    game:GetService("Workspace").Lobby.brazil.portal.CanTouch = false
+    
+                                    wait(0.3)
+    
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Lobby.brazil.portal.CFrame + Vector3.new(0, 3, 0)
+    
+                                    firetouchinterest(handle, target.Character:FindFirstChild("HumanoidRootPart"), 0)
+                                    wait(0.1)
+                                    firetouchinterest(handle, target.Character:FindFirstChild("HumanoidRootPart"), 1)
+    
+                                    wait(0.8)
+    
+                                    game:GetService("Workspace").Lobby.brazil.portal.CanTouch = true
+                                    
+                                    tool:Destroy()
+    
+                                    game.Players.LocalPlayer.CharacterAdded:Wait()
+    
+                                    wait(1)
+    
+                                    if game.Players:FindFirstChild(target.Name) == nil then
+                                        notification("Success", 3)
+                                    end
+    
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Lobby.Teleport1.CFrame
+    
+                                    wait(0.5)
+    
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = prevcframe
+                                    game.Workspace.CurrentCamera.CFrame = prevcamcframe
+    
+                                    game.Players.LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+    
+                                    cankill = true
+                                end
+                            end
+                        end
+                    end			
+                end				
+            end					
+        end
+    end
+    
+    function findplayer(mystring, isdisplayname)
+        local foundplrs = {}
+    
+        local plrs = game.Players:GetChildren()
+    
+        if isdisplayname then
+            for i,v in pairs(plrs) do
+                local low = v.DisplayName:lower()
+                low = string.sub(low, 0, #mystring:lower())
+    
+                if low == mystring:lower() then
+                    table.insert(foundplrs, v)
+                end
+            end
+        else
+            for i,v in pairs(plrs) do
+                local low = v.Name:lower()
+                low = string.sub(low, 0, #mystring:lower())
+    
+                if low == mystring:lower() then
+                    table.insert(foundplrs, v)
+                end
+            end
+        end
+    
+        return foundplrs[1]
+    end
+    
+    function findplayerfromcharacter(char)
+        local target = nil
+        for i,v in pairs(game.Players:GetChildren()) do
+            if v:IsA("Player") then
+                if v.Character and v.Character == char then
+                    target = v
+                end
+            end
+        end
+    
+        return target
+    end
+    
+    close.Activated:Connect(function()
+        Gui:Destroy()
+        clickkillenabled = false
+    end)
+    
+    plrname.Changed:Connect(function()
+        plrtokill = plrname.Text
+    end)
+    
+    killdisplay.Activated:Connect(function()
+        local him = findplayer(plrtokill, true)
+        if him then
+            kill(him, maxreacttime, 0.4)
+        end
+    end)
+    
+    killplr.Activated:Connect(function()
+        local him = findplayer(plrtokill, false)
+        if him then
+            kill(him, maxreacttime, 0.4)
+        end
+    end)
+    
+    mousekill.Activated:Connect(function()
+        if clickkillenabled == false then
+            clickkillenabled = true
+            mousekill.BackgroundColor3 = Color3.fromHex("#9af036")
+        else
+            clickkillenabled = false
+            mousekill.BackgroundColor3 = Color3.fromHex("#f05c3f")
+        end
+    end)
+    
+    local whatdrag = top
+    
+    local uis = game:GetService("UserInputService")
+    
+    local dragtoggle = false
+    local dragspeed = 0.2
+    local dragstart = nil
+    local startpos = nil
+    
+    local function updateinput(input)
+        local dist = input.Position - dragstart
+        local pos = UDim2.new(startpos.X.Scale, startpos.X.Offset + dist.X,
+            startpos.Y.Scale, startpos.Y.Offset + dist.Y)
+    
+        game:GetService("TweenService"):Create(whatdrag, TweenInfo.new(dragspeed), {Position = pos}):Play()
+    end
+    
+    whatdrag.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then		
+            dragtoggle = true
+            dragstart = input.Position
+            startpos = whatdrag.Position
+    
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End and dragtoggle then				
+                    dragtoggle = false
+                end
+            end)
+        end
+    end)
+    
+    uis.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            if dragtoggle then
+                updateinput(input)
+            end
+        end
+    end)
+    
+    -- MouseKill
+    
+    local mouse = plr:GetMouse()
+    
+    mouse.Button1Down:Connect(function()
+        local mtarget = mouse.Target
+        local chr = nil
+    
+        if clickkillenabled then
+            if mtarget.Parent:IsA("Model") then
+                chr = mtarget.Parent
+            elseif mtarget.Parent.Parent:IsA("Model") then
+                chr = mtarget.Parent.Parent
+            end
+    
+            if chr then
+                local target = findplayerfromcharacter(chr)
+                if target then
+                    kill(target, maxreacttime, 0.4)
+                end
+            end
+        end
+    end)end)
